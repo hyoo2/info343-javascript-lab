@@ -9,6 +9,10 @@
 
 function addition() {
 	// your code goes here!
+    var num1 = document.getElementById('additionInput1');
+    var num2 = document.getElementById('additionInput2');
+    var sum = parseFloat(num1.value) + parseFloat(num2.value);
+    alert('The sum is ' + sum);
 }
 
 /* --------------------------------------------------------- */
@@ -29,6 +33,25 @@ function addition() {
 
 function vowelCounter() {
 	// your code goes here!
+    //var vowels = ['a', 'e', 'i', 'o', 'u'];
+    var vowelInput = document.getElementById('vowelInput').value;
+    var chars = vowelInput.split('');
+    // this is to print out the array to console for debugging
+    console.log(chars);
+
+
+    var count = 0;
+    for (var idx = 0; idx < chars.length; idx++) {
+        var letter = chars[idx];
+        if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u') {
+            count++;
+        }
+    }
+    if (count == 1) {
+        alert('That sentence has 1 vowel in it.');
+    } else {
+        alert('That sentence has ' + count + ' vowels in it.');
+    }
 }
 
 /* --------------------------------------------------------- */
@@ -59,11 +82,14 @@ function vowelCounter() {
 */ 
 
 function submit() {
-	
+	var guess = document.getElementById('numberGuess');
+    if (guess > numberResult) {
+
+    }
 }
 
 function reset() {
-
+    var numberResult = Math.floor((Math.random() * 100) + 1);
 }
 
 
